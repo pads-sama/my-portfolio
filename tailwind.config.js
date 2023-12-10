@@ -7,15 +7,20 @@ export default {
   theme: {
     extend: {
       colors: {
-        'primary': '#52057B',
-        'secondary': '#892CDC',
-        'accent-clr': '#fff',
+        'primary': '#0c0c1d',
+        'secondary': '#00EEFF',
+        'accent-clr': '#d3d3d3',
 
         //for gradients
         'clr-1': '#52057B',
         'clr-2': '#892CDC',
         'clr-3': '#BC6FF1' 
+      },
+      fontFamily:{
+        noto: ['Noto Serif', 'serif'],
+        roboto: ['Roboto', 'sans-serif']
       }
+
     },
   },
   plugins: [],

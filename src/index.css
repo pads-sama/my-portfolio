@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
 
 @property --gradient-angle {
   syntax: "<angle>";
@@ -11,8 +14,8 @@
 }
 
 :root {
-  --bg-clr: #000;
-  --accent-clr: #fff;
+  --bg-clr: #0c0c1d;
+  --accent-clr: #d3d3d3;
   /* for gradient */
   --clr-1: #52057B;
   --clr-2: #892CDC;
@@ -30,138 +33,22 @@
   font-family: var(--fm);
 }
 
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
 
 body {
   background-color: var(--bg-clr);
+  color: var(--accent-clr);
 }
 
-header {
-  height: 6.25rem;
-  width: 100%;
-  position: relative;
+section {
+  height: 100vh;
+  scroll-snap-align: center;
 }
 
-.burger {
-  width: 2.5rem;
-  height: 5vh;
-  position: relative;
-  border-radius: 50px;
-  background-color: var(--bg-clr);
-}
-
-.logo {
-  -webkit-text-stroke: 1px var(--clr-2);
-  text-stroke: 1px var(--clr-2);
-}
-
-.close {
-  width: 2.5rem;
-  height: 5vh;
-  position: relative;
-  border-radius: 50px;
-  background-color: var(--bg-clr);
-}
-
-.burger::before,
-.burger::after,
-.close::before,
-.close::after {
-  content: '';
-  position: absolute;
-  inset: -0.1rem;
-  z-index: -1;
-  background: conic-gradient(from var(--gradient-angle), var(--clr-3), var(--clr-2), var(--clr-1), var(--clr-2), var(--clr-3));
-  border-radius: inherit;
-  opacity: .6;
-  transition: .3s ease;
-}
-
-
-.close::before,
-.close::after {
-  background: conic-gradient(from var(--gradient-angle), #BC6FF1, #892CDC, #52057B, #892CDC, #BC6FF1);
-  animation: rotation 3s linear infinite;
-  opacity: 1;
-}
-
-
-.burger:hover::before,
-.burger:hover::after {
-  background: conic-gradient(from var(--gradient-angle), #BC6FF1, #892CDC, #52057B, #892CDC, #BC6FF1);
-  animation: rotation 3s linear infinite;
-  opacity: 1;
-}
-
-.burger::after {
-  filter: blur(.4rem)
-}
-
-.close::after {
-  filter: blur(.4rem)
-}
-
-.burger:hover::after {
-  filter: blur(1rem)
-}
-
-.nav-menu {
-  position: absolute;
-  /* inset: 6.25rem 0; */
-  top: 6.25rem;
-  right: 2.25rem;
-  background: var(--clr-4);
-  height: 25vh;
-  width: 18.75rem;
-  padding: 1rem;
-
-  border-radius: 10px;
-  border: 2px solid var(--clr-5);
-  backdrop-filter: blur(15px);
-  box-shadow: 0px 4px 30px var(--clr-2);
-  z-index: 1000;
-
-}
-
-.menu-item {
-  width: 10rem;
-  height: 5vh;
-  position: relative;
-  letter-spacing: 1px;
-  transition: .2s ease;
-}
-
-.menu-item:hover {
-  background-color: var(--bg-clr);
-  letter-spacing: 2px;
-  box-shadow: 0px 1px 30px var(--clr-2);
-}
-
-
-.menu-item::before,
-.menu-item::after {
-  content: '';
-  position: absolute;
-  inset: -0.1rem;
-  z-index: -1;
-  border-radius: inherit;
-  opacity: .6;
-  transition: .2s ease;
-
-}
-
-.menu-item:hover::before,
-.menu-item:hover::after {
-  background: conic-gradient(from var(--gradient-angle), #BC6FF1, #52057B, #52057B, #BC6FF1);
-  animation: rotation 3s linear infinite;
-  opacity: 1;
-}
-
-@keyframes rotation {
-  0% {
-    --gradient-angle: 0deg;
-  }
-
-  100% {
-    --gradient-angle: 360deg;
-  }
+a {
+  text-decoration: none;
+  color: inherit;
 }

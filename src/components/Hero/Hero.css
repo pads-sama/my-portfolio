@@ -1,0 +1,31 @@
+.hero {
+    height: calc(100vh - 100px);
+    /* background-image: url('../../assets/background.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center bottom -100px; */
+    display: grid;
+    grid-template-areas: 'stack';
+    overflow: hidden;
+}
+
+.hero>* {
+    grid-area: stack;
+}
+
+.section {
+    position: relative;
+}
+
+.mockup {
+    transform: translate(-50%, 0);
+    opacity: .7;
+}
+
+
+
+/* .gradient {
+    background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(to bottom, #00EEFF, #0c0c1d);
+} */
