@@ -18,7 +18,6 @@ const itemVariants = {
 const NavBar = () => {
   return (
     <>
-      {/* <aside className="w-20 h-screen bg-black"></aside> */}
       <nav className="h-[6.25rem] items-center justify-center w-full flex bg-transparent">
         <SideBar />
         <div className="wrapper w-full px-[2.5rem] pl-24 flex justify-between | sm:pl-24 | md:w-[900px] | xl:px-0 xl:w-[1150px]">

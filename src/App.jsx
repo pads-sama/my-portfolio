@@ -1,5 +1,12 @@
+import About from "./components/About/About";
+import Contacts from "./components/Contacts/Contacts";
 import Hero from "./components/Hero/Hero";
 import NavBar from "./components/NavBar/NavBar";
+import ParallaxAbout from "./components/Parallax/ParallaxAbout/ParallaxAbout";
+import ParallaxProjects from "./components/Parallax/ParallaxProjects/ParallaxProjects";
+import Projects from "./components/Projects/Projects";
+import Projects1 from "./components/Projects/Projects1";
+import Projects2 from "./components/Projects/Projects2";
 
 function App() {
   return (
@@ -8,15 +15,27 @@ function App() {
         <NavBar />
         <Hero />
       </section>
-      <section id="About">parallax</section>
-      <section>about me</section>
-      <section id="Skills">parallax</section>
-      <section>skills</section>
-      <section id="Projects">parallax</section>
-      <section>Project 1</section>
-      <section>Project 2</section>
-      <section>Project 3</section>
-      <section id="Contact">Contact me</section>
+      {/* <section id="About">
+        <ParallaxAbout />
+      </section> */}
+      <section>
+        <About />
+      </section>
+      {/* <section id="Projects">
+        <ParallaxProjects />
+      </section> */}
+      <section>
+        <Projects />
+      </section>
+      <section>
+        <Projects1 />
+      </section>
+      <section>
+        <Projects2 />
+      </section>
+      <section id="Contact">
+        <Contacts />
+      </section>
     </>
   );
 }

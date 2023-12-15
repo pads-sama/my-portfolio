@@ -1,13 +1,16 @@
 .hero {
     height: calc(100vh - 100px);
-    /* background-image: url('../../assets/background.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center bottom -100px; */
+    background-image: linear-gradient(180deg, #0c0c1d, #111132);
     display: grid;
     grid-template-areas: 'stack';
     overflow: hidden;
+    font-family: var(--fm);
 }
+
+.name {
+    font-family: var(--fm);
+}
+
 
 .hero>* {
     grid-area: stack;
@@ -21,11 +24,3 @@
     transform: translate(-50%, 0);
     opacity: .7;
 }
-
-
-
-/* .gradient {
-    background-clip: text;
-    color: transparent;
-    background-image: linear-gradient(to bottom, #00EEFF, #0c0c1d);
-} */

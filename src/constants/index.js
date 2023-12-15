@@ -20,3 +20,26 @@ export const socials = [
     alt: 'instagram icon' 
   },
 ]
+
+export const skills = [
+  {
+    label: "HTML/CSS/JavaScript",
+    rate: "80%",
+  },
+  {
+    label: "ReactJs",
+    rate: "50%",
+  },
+  {
+    label: "TailwindCss/Bootstrap",
+    rate: "80%",
+  },
+  {
+    label: "MySQL",
+    rate: "60%",
+  },
+  {
+    label: "PHP/Laravel",
+    rate: "60%",
+  },
+];

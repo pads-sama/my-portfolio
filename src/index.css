@@ -23,7 +23,14 @@
   --clr-3: #BC6FF1;
   --clr-4: rgb(190, 112, 242, 0.15);
   --clr-5: rgb(190, 112, 242, 0.7);
-  --fm: 'Open Sans', sans-serif;
+  --fm: 'OnePiece-zAqL', sans-serif;
+  /* --fm: 'Open Sans', sans-serif; */
+}
+
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
 }
 
 * {
@@ -44,7 +51,7 @@ body {
 }
 
 section {
-  height: 100vh;
+  height: 100dvh;
   scroll-snap-align: center;
 }
 

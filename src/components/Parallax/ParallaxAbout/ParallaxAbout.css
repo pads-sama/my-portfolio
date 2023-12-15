@@ -1,0 +1,9 @@
+.parallax {
+    display: grid;
+    grid-template-areas: 'stack';
+    overflow: hidden;
+}
+
+.parallax>* {
+    grid-area: stack;
+}

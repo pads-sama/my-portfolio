@@ -35,3 +35,8 @@
 .burger:hover::after {
     filter: blur(1rem)
 } */
+
+
+.paint {
+    contain: paint;
+}
