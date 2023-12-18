@@ -9,7 +9,7 @@ export default {
       colors: {
         'primary': '#0c0c1d',
         'secondary': '#00EEFF',
-        'accent-clr': '#fff',
+        'accent-clr': '#FF6F61',
         'accent-clrGray': '#d3d3d3',
         'gradient': '#111132',
 

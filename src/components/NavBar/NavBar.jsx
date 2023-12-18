@@ -22,7 +22,7 @@ const NavBar = () => {
         <SideBar />
         <div className="wrapper w-full px-[2.5rem] pl-24 flex justify-between | sm:pl-24 | md:w-[900px] | xl:px-0 xl:w-[1150px]">
           <motion.span
-            className="text-lg font-noto font-bold tracking-wide | sm:text-lg | md:text-xl | xl:text-2xl"
+            className="text-lg font-noto font-bold tracking-wide text-accent-clr | sm:text-lg | md:text-xl | xl:text-2xl"
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.5, duration: 0.5 }}

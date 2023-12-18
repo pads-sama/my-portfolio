@@ -29,7 +29,7 @@ const titleVariants = {
 
 const Hero = () => {
   return (
-    <div className="hero relative text-accent-clr">
+    <div className="hero relative text-secondary">
       <motion.section
         className="space-y-5 text-center section z-10 py-20 px-2"
         initial="initial"
@@ -38,7 +38,7 @@ const Hero = () => {
       >
         <motion.span
           variants={titleVariants}
-          className="name text-sm  tracking-wider transition-all duration-700 | sm:text-md | md:text-lg | xl:text-xl"
+          className="name text-sm font-bold tracking-wider transition-all duration-700 | sm:text-md | md:text-lg | xl:text-xl"
         >
           Hi, I am Juan Carlos
         </motion.span>
@@ -46,7 +46,7 @@ const Hero = () => {
           <span className="text-3xl font-extrabold tracking-wide transition-all duration-700 | sm:text-5xl | md:text-6xl | xl:text-7xl">
             Frontend{" "}
           </span>
-          <span className="text-3xl font-extrabold text-secondary tracking-wide transition-all duration-700 | sm:text-5xl | md:text-6xl | xl:text-7xl">
+          <span className="text-3xl font-extrabold text-accent-clr tracking-wide transition-all duration-700 | sm:text-5xl | md:text-6xl | xl:text-7xl">
             Developer
           </span>
         </motion.div>
@@ -55,7 +55,7 @@ const Hero = () => {
             variants={titleVariants}
             className=" text-xs transition-all duration-700 | sm:text-sm | md:text-sm | xl:text-sm"
           >
-            Dedicated to <span className="text-secondary">crafting </span>
+            Dedicated to <span className="text-accent-clr">crafting </span>
             beautiful and functional websites.
           </motion.p>
         </div>
