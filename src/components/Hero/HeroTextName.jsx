@@ -24,7 +24,7 @@ const HeroTextName = ({
   className,
   textY,
 }) => {
-  const ref = useRef(null);
+  const ref = useRef();
   const inView = useInView(ref, { amount: 0.5, once: true });
 
   return (
