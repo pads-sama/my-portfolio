@@ -1,10 +1,24 @@
 .hero {
-    height: calc(100vh - 100px);
-    background-image: linear-gradient(180deg, #0c0c1d, #111132);
-    display: grid;
-    grid-template-areas: 'stack';
-    overflow: hidden;
-    font-family: var(--fm);
+    height: 100dvh;
+    background-image: url('../../assets/headset.webp');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    position: absolute;
+    inset: 0;
+    z-index: -10;
+}
+
+
+.lighting {
+    background-image: linear-gradient(#00EEFF, #0c0c1d);
+    filter: blur(300px);
+}
+
+.stroke {
+    color: #000;
+    -webkit-text-stroke: 2px var(--acc-clr);
 }
 
 .name {
@@ -12,15 +26,6 @@
 }
 
 
-.hero>* {
-    grid-area: stack;
-}
-
 .section {
     position: relative;
-}
-
-.mockup {
-    transform: translate(-50%, 0);
-    opacity: .7;
 }

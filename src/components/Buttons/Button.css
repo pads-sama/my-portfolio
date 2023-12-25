@@ -1,0 +1,73 @@
+.btn {
+    transition: all 0.5s var(--cubic-bezier) 0.15s;
+}
+
+.btn:hover {
+    color: white;
+}
+
+.btn::before,
+.btn::after {
+    border: 0;
+    content: "";
+    position: absolute;
+    height: 1rem;
+    width: 1rem;
+    transition: all 0.5s var(--cubic-bezier);
+    z-index: -2;
+    border-radius: 50%;
+}
+
+.btn::before {
+    top: -0.75rem;
+    left: 0.5rem;
+    animation: topAnimation 2s var(--cubic-bezier) 0.25s infinite alternate;
+}
+
+.btn::after {
+    top: 3rem;
+    left: 9.5rem;
+    animation: bottomAnimation 2s var(--cubic-bezier) 0.5s infinite alternate;
+}
+
+
+.btn:hover::before,
+.btn:hover::after {
+    top: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 0;
+    animation: none;
+}
+
+.btn:hover::after {
+    left: 0;
+    border: 0;
+}
+
+.btn:hover::before {
+    top: 0.5rem;
+    left: 0.35rem;
+    border: 0;
+}
+
+/* animation */
+@keyframes topAnimation {
+    from {
+        transform: translate(0rem, 0);
+    }
+
+    to {
+        transform: translate(0rem, 3.5rem);
+    }
+}
+
+@keyframes bottomAnimation {
+    from {
+        transform: translate(-8.4rem, 0);
+    }
+
+    to {
+        transform: translate(0rem, 0);
+    }
+}

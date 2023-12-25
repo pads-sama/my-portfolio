@@ -11,7 +11,7 @@ export default {
         'secondary': '#00EEFF',
         'accent-clr': '#FF6F61',
         'accent-clrGray': '#d3d3d3',
-        'gradient': '#111132',
+        'gradient': '#111134',
 
         //for gradients
         'clr-1': '#52057B',
@@ -21,10 +21,12 @@ export default {
       fontFamily:{
         noto: ['Noto Serif', 'serif'],
         roboto: ['Roboto', 'sans-serif']
-      }
+      },
+      textStroke: {
+        'black': '10px green',
+      },
 
     },
   },
-  plugins: [],
 }
 

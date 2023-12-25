@@ -1,23 +1,37 @@
-import React from "react";
-import { Tech4, Tech5, Tech8 } from "../../../assets";
+import React, { useRef } from "react";
 import "./ParallaxAbout.css";
+import HeroTextName from "../../Hero/HeroTextName";
+import "./ParallaxAbout.css";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const ParallaxAbout = () => {
+  const containerRef = useRef();
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"],
+  });
+
+  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "150%"]);
+
   return (
-    <div className="parallax">
-      <section className="section1 w-full h-screen items-center justify-center flex z-[3] ">
-        <span className="uppercase font-extrabold text-9xl tracking-wide  px-52">
-          About Me
-        </span>
-      </section>
-      <section className="z-[2] relative">
-        {/* <img src={Tech4} alt="" className="opacity-40 absolute -bottom-20 " /> */}
-      </section>
-      <section>
-        {/* <img src={Tech5} alt="" className="opacity-100 h-full " /> */}
-        <img src={Tech8} alt="" className="opacity-100 h-full " />
-      </section>
-    </div>
+    <>
+      <motion.div
+        ref={containerRef}
+        className=" w-full h-[100vh] flex items-end justify-end relative overflow-hidden"
+      >
+        <motion.div className="backgroundOverlay bg-black/20 z-[5] "></motion.div>
+        <motion.div style={{ y: bgY }} className="bg"></motion.div>
+        <div className=" z-[6]">
+          <HeroTextName
+            textY={textY}
+            className="text-6xl uppercase transition | sm:text-7xl | md:text-8xl xl:text-9xl xl:font-extrabold"
+            text2="About me"
+          />
+        </div>
+      </motion.div>
+    </>
   );
 };
 

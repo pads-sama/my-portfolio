@@ -20,7 +20,7 @@ const NavBar = () => {
     <>
       <nav className="h-[6.25rem] items-center justify-center w-full flex bg-transparent">
         <SideBar />
-        <div className="wrapper w-full px-[2.5rem] pl-24 flex justify-between | sm:pl-24 | md:w-[900px] | xl:px-0 xl:w-[1150px]">
+        <div className=" w-full px-[2.5rem] pl-24 flex justify-between bg-transparent | sm:pl-24 | md:w-[56.25rem] | xl:px-0 xl:w-[71.875rem]">
           <motion.span
             className="text-lg font-noto font-bold tracking-wide text-accent-clr | sm:text-lg | md:text-xl | xl:text-2xl"
             initial={{ opacity: 0, scale: 0.5 }}

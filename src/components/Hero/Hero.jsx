@@ -1,88 +1,33 @@
-import { Mockup, ScrollIcon } from "../../assets";
-import Buttons from "../Buttons/Buttons";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import "./Hero.css";
-
-const titleVariants = {
-  initial: {
-    y: -500,
-    opacity: 0,
-  },
-  animate: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 2,
-      staggerChirdlen: 0.5,
-    },
-  },
-
-  scrollButton: {
-    opacity: 0,
-    y: 5,
-    transition: {
-      duration: 2,
-      repeat: Infinity,
-    },
-  },
-};
+import HeroTitle from "./HeroTitle";
+import SideBar from "../SideBar/SideBar";
+import { useRef } from "react";
 
 const Hero = () => {
+  const containerRef = useRef();
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"], //start in the start of the viewport and end in the start of the viewport
+  });
+
+  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
   return (
-    <div className="hero relative text-secondary">
-      <motion.section
-        className="space-y-5 text-center section z-10 py-20 px-2"
-        initial="initial"
-        animate="animate"
-        variants={titleVariants}
+    <>
+      <motion.div
+        ref={containerRef}
+        className=" grid place-content-center z-10 relative overflow-hidden h-[100dvh] font-medium text-gray-100 transition-all duration-700"
       >
-        <motion.span
-          variants={titleVariants}
-          className="name text-sm font-bold tracking-wider transition-all duration-700 | sm:text-md | md:text-lg | xl:text-xl"
-        >
-          Hi, I am Juan Carlos
-        </motion.span>
-        <motion.div variants={titleVariants}>
-          <span className="text-3xl font-extrabold tracking-wide transition-all duration-700 | sm:text-5xl | md:text-6xl | xl:text-7xl">
-            Frontend{" "}
-          </span>
-          <span className="text-3xl font-extrabold text-accent-clr tracking-wide transition-all duration-700 | sm:text-5xl | md:text-6xl | xl:text-7xl">
-            Developer
-          </span>
+        <div className="backgroundOverlay bg-black/50 z-[-9]" />
+        <motion.div style={{ y: bgY }} className="hero"></motion.div>
+        <SideBar />
+        <motion.div className=" grid h-auto px-5 | sm:pl-24 | md:w-[56.25rem] | xl:px-0 xl:w-[71.875rem]">
+          <HeroTitle textY={textY} />
         </motion.div>
-        <div className="tracking-wider">
-          <motion.p
-            variants={titleVariants}
-            className=" text-xs transition-all duration-700 | sm:text-sm | md:text-sm | xl:text-sm"
-          >
-            Dedicated to <span className="text-accent-clr">crafting </span>
-            beautiful and functional websites.
-          </motion.p>
-        </div>
-        <motion.div variants={titleVariants} className="flex justify-center">
-          <Buttons label="Message Me" />
-        </motion.div>
-        <motion.img
-          variants={titleVariants}
-          animate="scrollButton"
-          src={ScrollIcon}
-          alt="scroll icon"
-          className="absolute bottom-32 right-10 w-20 h-20 cursor-pointer "
-        />
-      </motion.section>
-      <motion.section
-        className="section relative"
-        initial={{ opacity: 0, scale: 0.5 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.9, duration: 1 }}
-      >
-        <img
-          src={Mockup}
-          alt="mockup image"
-          className="absolute left-[50%] top-[40%] transition-all duration-1000 mockup | sm:top-[20%] | md:top-[10%]  | xl:w-[60%] xl:top-0"
-        />
-      </motion.section>
-    </div>
+      </motion.div>
+    </>
   );
 };
 

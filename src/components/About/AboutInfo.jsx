@@ -1,27 +1,33 @@
 import React from "react";
-import Buttons from "../Buttons/Buttons";
+import { Artistic } from "../../assets";
 
 const AboutInfo = () => {
   return (
-    <div className="space-y-5 pl-14 text-sm flex flex-col justify-center h-full">
-      <h1 className="text-4xl text-secondary font-bold">About Me</h1>
-      <p>
-        Frontend developer with a passion for crafting immersive digital
-        experiences. My journey in the world of web development is driven by a
-        relentless pursuit of pixel perfection and a love for transforming ideas
-        into visually stunning realities.
-      </p>
-      <div className="text-xl font-bold tracking-wide text-secondary/80 ">
-        What sets me apart?
+    <>
+      <div className="flex flex-col justify-center items-center transition gap-3">
+        <div className="w-[250px] h-[250px] bg-primary relative rounded-full overflow-hidden border-2 border-accent-clr">
+          <img
+            src={Artistic}
+            alt="my picture"
+            className="absolute top-5 left-5"
+          />
+        </div>
+        <div className="text-sm font-bold tracking-wider | xl:text-xl">
+          About me?
+        </div>
+        <p className="text-center | xl:text-sm">
+          A freelance web developer passionate about turning ideas into dynamic
+          online experiences. I specialize in crafting responsive websites and
+          dynamic web applications.
+        </p>
+        <a
+          href=""
+          className="underline text-secondary tracking-wide | xl:text-sm"
+        >
+          Here's my CV
+        </a>
       </div>
-      <p>
-        It's not just about writing code; it's about solving problems and
-        creating seamless user experiences. I believe in the power of
-        collaboration and I am always excited to work with others who share the
-        same passion for innovation.
-      </p>
-      <Buttons label="Download CV" />
-    </div>
+    </>
   );
 };
 

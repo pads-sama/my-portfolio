@@ -1,45 +1,100 @@
-import { Github, Instagram, Linkedin,  } from "../assets"
+import {
+  Devops,
+  Github,
+  Instagram,
+  Lighting,
+  Linkedin,
+  Responsive,
+  SEO,
+} from "../assets";
 
-export const SidebarMenu = [ 'Home', 'About','Skills', 'Projects', 'Contact'
-]
+export const SidebarMenu = ["Home", "About", "Skills", "Projects", "Contact"];
 
 export const socials = [
   {
-    id:'1',
     image: Github,
-    alt: 'github icon' 
+    alt: "github icon",
   },
   {
-    id:'2',
     image: Linkedin,
-    alt: 'linkedin icon' 
+    alt: "linkedin icon",
   },
   {
-    id:'3',
     image: Instagram,
-    alt: 'instagram icon' 
+    alt: "instagram icon",
   },
-]
+];
 
+
+//skills data
 export const skills = [
   {
-    label: "HTML/CSS/JavaScript",
-    rate: "80%",
+    label: "HTML",
+    rate: "90%",
+    style: ' calc((90% - 6rem))'
+  },
+  {
+    label: "CSS",
+    rate: "90%",
+    style: ' calc((90% - 6rem))'
+  },
+  {
+    label: "JavaScript",
+    rate: "60%",
+    style: ' calc((60% - 6rem))'
   },
   {
     label: "ReactJs",
     rate: "50%",
+    style: ' calc((50% - 6rem))'
   },
   {
-    label: "TailwindCss/Bootstrap",
-    rate: "80%",
+    label: "TailwindCSS",
+    rate: "70%",
+    style: ' calc((70% - 6rem))'
+  },
+  {
+    label: "Bootstrap",
+    rate: "50%",
+    style: ' calc((50% - 6rem))'
   },
   {
     label: "MySQL",
     rate: "60%",
+    style: ' calc((60% - 6rem))'
+  },
+  
+  {
+    label: "Git",
+    rate: "55%",
+    style: ' calc((55% - 6rem))'
+  },
+  
+];
+
+export const webAttributes = [
+  {
+    icon: Responsive,
+    title: "Responsive",
+    description:
+      "Adjusts to different screens and devices for a seamless experience.",
   },
   {
-    label: "PHP/Laravel",
-    rate: "60%",
+    icon: SEO,
+    title: "Search Engine Optimization (SEO)",
+    description:
+      "Apply SEO best practices for better search engine visibility.",
+  },
+  {
+    icon: Lighting,
+    title: "Fast Loading ",
+    description: "Optimizing loading times to enhance user satisfaction.",
+  },
+  {
+    icon: Devops,
+    title: "Dynamic",
+    description: " Crafting websites with dynamic and interactive features.",
   },
 ];
+
+// Projects data

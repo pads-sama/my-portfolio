@@ -1,11 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./Button.css";
 
 const Buttons = ({ label }) => {
   return (
-    <button className="h-9 w-36 bg-accent-clr text-primary font-bold rounded-md text-sm border-2 border-transparent transition-all duration-300 hover:bg-transparent hover:text-accent-clr hover:border-accent-clr | sm:h-9 sm:w-40 sm:text-sm | md:h-10 md:w-48 md:text-lg | xl:h-12 xl:w-52 xl:text-xl">
-      {label}
-    </button>
+    <div className="mt-5 | sm:mt-8 | md:mt-9 | xl:mt-10">
+      <button className="btn font-medium relative py-[1rem] px-[2.5rem] my-0 mx-auto tracking-wide bg-transparent outline-none text-lg text-gray-100 text-center | before:bg-orange-600 after:bg-accent-clr hover:after:shadow-xl ">
+        {label}
+      </button>
+    </div>
   );
 };
 Buttons.propTypes = {

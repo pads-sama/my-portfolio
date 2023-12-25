@@ -1,0 +1,15 @@
+.skills_progressbar {
+    width: calc((90% - 6rem));
+
+}
+
+.about_container {
+    background-image: url('../../assets/units.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+}

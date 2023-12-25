@@ -38,6 +38,7 @@ const Links = ({ setIsSidebarOpen }) => {
     >
       {SidebarMenu.map((i) => (
         <motion.a
+          key={i}
           variants={variantsItem}
           onClick={handleClick}
           href={"#" + i}

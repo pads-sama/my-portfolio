@@ -1,9 +1,11 @@
-.parallax {
-    display: grid;
-    grid-template-areas: 'stack';
-    overflow: hidden;
-}
-
-.parallax>* {
-    grid-area: stack;
+.bg {
+    background-image: url('../../../assets/ai.webp');
+    height: 100dvh;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    inset: 0;
+    z-index: 2;
 }

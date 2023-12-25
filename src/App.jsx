@@ -7,23 +7,23 @@ import ParallaxProjects from "./components/Parallax/ParallaxProjects/ParallaxPro
 import Projects from "./components/Projects/Projects";
 import Projects1 from "./components/Projects/Projects1";
 import Projects2 from "./components/Projects/Projects2";
+import SideBar from "./components/SideBar/SideBar";
 
 function App() {
   return (
     <>
       <section id="Home">
-        <NavBar />
         <Hero />
       </section>
-      {/* <section id="About">
+      <section id="About">
         <ParallaxAbout />
-      </section> */}
-      <section>
+      </section>
+      <section className="h-100%">
         <About />
       </section>
-      {/* <section id="Projects">
+      <section id="Projects">
         <ParallaxProjects />
-      </section> */}
+      </section>
       <section>
         <Projects />
       </section>
