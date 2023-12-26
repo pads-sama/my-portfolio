@@ -45,13 +45,13 @@ const AboutSkills = () => {
               {skill.label}
             </div>
 
-            <span
+            <motion.span
               initial="hideRate"
               animate={inView ? "showRate" : "hideRate"}
               transition={{ delay: 10 }}
               className="skills_progressbar h-full bg-accent-clr z-[2]"
               style={{ width: skill.style }}
-            ></span>
+            ></motion.span>
             <motion.div
               // initial="hideRate"
               // animate={inView ? "showRate" : "hideRate"}

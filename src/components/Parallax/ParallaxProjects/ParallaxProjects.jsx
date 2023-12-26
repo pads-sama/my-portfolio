@@ -19,7 +19,7 @@ const ParallaxProjects = () => {
       className="w-full h-[100vh] relative overflow-hidden flex items-end justify-start"
     >
       <motion.div style={{ y: bgY }} className="parallax_project" />
-      <div className="backgroundOverlay bg-black/30 z-[5]" />
+      <div className="backgroundOverlay bg-gradient-to-r from-primary to-secondary opacity-[.3] z-[5]" />
       <HeroTextName
         textY={textY}
         className="text-6xl uppercase transition z-10 |  sm:text-7xl | md:text-8xl xl:text-9xl xl:font-extrabold"

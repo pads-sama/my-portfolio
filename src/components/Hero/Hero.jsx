@@ -20,7 +20,7 @@ const Hero = () => {
         ref={containerRef}
         className=" grid place-content-center z-10 relative overflow-hidden h-[100dvh] font-medium text-gray-100 transition-all duration-700"
       >
-        <div className="backgroundOverlay bg-black/50 z-[-9]" />
+        <div className="backgroundOverlay bg-primary/30 z-[-9]" />
         <motion.div style={{ y: bgY }} className="hero"></motion.div>
         <SideBar />
         <motion.div className=" grid h-auto px-5 | sm:pl-24 | md:w-[56.25rem] | xl:px-0 xl:w-[71.875rem]">

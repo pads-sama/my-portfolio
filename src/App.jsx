@@ -27,12 +27,12 @@ function App() {
       <section>
         <Projects />
       </section>
-      <section>
+      {/* <section>
         <Projects1 />
       </section>
       <section>
-        <Projects2 />
-      </section>
+        <Projects2 /> */}
+      {/* </section> */}
       <section id="Contact">
         <Contacts />
       </section>

@@ -21,7 +21,7 @@ const ParallaxAbout = () => {
         ref={containerRef}
         className=" w-full h-[100vh] flex items-end justify-end relative overflow-hidden"
       >
-        <motion.div className="backgroundOverlay bg-black/20 z-[5] "></motion.div>
+        <motion.div className="backgroundOverlay bg-gradient-to-l from-primary to-secondary opacity-[.2] z-[5] "></motion.div>
         <motion.div style={{ y: bgY }} className="bg"></motion.div>
         <div className=" z-[6]">
           <HeroTextName
