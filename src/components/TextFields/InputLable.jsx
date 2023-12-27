@@ -1,10 +1,10 @@
 import React from "react";
 
-const InputLable = ({ label, htmlFor, className }) => {
+const InputLable = ({ label, htmlFor }) => {
   return (
-    <label className={className} htmlFor={htmlFor}>
+    <label className="" htmlFor={htmlFor}>
       {label.split("").map((char) => (
-        <span>{char}</span>
+        <span className="text-sm font-medium tracking-wider">{char}</span>
       ))}
     </label>
   );

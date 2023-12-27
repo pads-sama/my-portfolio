@@ -12,8 +12,10 @@ export const SidebarMenu = ["Home", "About", "Skills", "Projects", "Contact"];
 
 export const socials = [
   {
+
     image: Github,
     alt: "github icon",
+    link: 'https://github.com/pads-sama'
   },
   {
     image: Linkedin,

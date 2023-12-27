@@ -2,33 +2,17 @@ import React from "react";
 import { socials } from "../../constants";
 import { motion } from "framer-motion";
 
-// const roll = {
-//   initial: {
-//     x: -1000,
-//   },
-//   animate: {
-//     x: 0,
-//     transition: { delay: 1, stagger: 0.2 },
-//     rotate: 180,
-//   },
-// };
-
 const HeroSocials = () => {
   return (
-    <div className="absolute bottom-0 right-0">
-      <motion.span
-        // initial="initial"
-        // animate="animate"
-        className="flex w-48 xl:w-52"
-      >
+    <div className=" flex flex-col items-end  w-full bottom-0 right-0">
+      <motion.span className="flex w-full gap-5 justify-center">
         {socials.map((social, index) => (
           <motion.a
-            // variants={roll}
             href="#"
             key={index}
-            className=" w-full h-12 | sm:h-14 | md:h-16 | xl:h-16 "
+            className=" h-10 | sm:h-10 | md:h-10 | xl:h-10 "
           >
-            <img src={social.image} alt={social.alt} className="w-8 h-8 " />
+            <img src={social.image} alt={social.alt} className="w-6 h-6 " />
           </motion.a>
         ))}
       </motion.span>
