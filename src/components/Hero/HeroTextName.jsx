@@ -48,10 +48,11 @@ const HeroTextName = ({
         transition={{ staggerChildren: 0.1 }}
         style={{ y: textY }}
       >
-        {text2.split(" ").map((word) => (
-          <span>
-            {word.split("").map((char) => (
+        {text2.split(" ").map((word, index) => (
+          <span key={index}>
+            {word.split("").map((char, index) => (
               <motion.span
+                key={index}
                 className={
                   ` text-secondary font-semibold inline-block` + className
                 }

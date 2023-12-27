@@ -7,6 +7,8 @@ import SubmitButton from "../Buttons/SubmitButton";
 import HeroTextName from "../Hero/HeroTextName";
 import { useScroll, useTransform } from "framer-motion";
 import HeroSocials from "../Hero/HeroSocials";
+import ContactsForm from "./ContactsForm";
+import ContactHeadings from "./ContactHeadings";
 
 const Contacts = () => {
   const containerRef = useRef();
@@ -28,35 +30,12 @@ const Contacts = () => {
           className="text-6xl uppercase transition z-10 | sm:text-7xl | md:text-8xl xl:text-7xl xl:font-extrabold"
           text2="Contact me"
         />
-        {/* <div className="backgroundOverlay  bg-gradient-to-l from-primary to-secondary opacity-[.2] z-10 "></div> */}
+        <div className="backgroundOverlay  bg-gradient-to-l from-primary to-secondary opacity-[.2] z-8 "></div>
       </div>
       <div className="w-full h-full grid place-content-center bg-primary |  xl:h-[100dvh]">
         <div>
-          <div className="w-96">
-            <span className="text-2xl tracking-wider text-accent-clr">
-              Send me a message
-            </span>
-            <p className="text-xs pt-5 tracking-wide leading-5 text-gray-300 | xl:text-sm">
-              Have a project in mind or just want to chat about web development?
-              I'd love to hear from you! Feel free to drop me a message, and
-              I'll get back to you as soon as possible.
-            </p>
-          </div>
-          <form action="">
-            <div className="w-96 flex flex-col mt-10 relative form_control">
-              <TextInput type="text" id="name" name="name" />
-              <InputLable label="Name" />
-            </div>
-            <div className="w-96 flex flex-col mt-10 relative form_control">
-              <TextInput type="email" id="email" name="email" />
-              <InputLable label="Email" />
-            </div>
-            <div className="w-96 flex flex-col mt-10 relative form_control">
-              <TextArea id="message" name="message" />
-              <InputLable label="Message" />
-            </div>
-            <SubmitButton />
-          </form>
+          <ContactHeadings />
+          <ContactsForm />
         </div>
         <div className="absolute bottom-0 w-full flex transition | xl:w-auto xl:right-72 ">
           <div className="flex flex-col items-center justify-center w-full">

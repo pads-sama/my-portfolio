@@ -4,7 +4,6 @@
     background-size: cover;
     background-repeat: no-repeat;
     inset: 0;
-    /* height: 100dvh; */
 }
 
 label span:nth-child(1) {
@@ -62,7 +61,6 @@ label span {
 
 input:focus+label span,
 textarea:focus+label span {
-    color: #0ef;
+    color: var(--acc-clr);
     transform: translateY(-30px);
-    background: red;
 }

@@ -1,9 +1,15 @@
 import React from "react";
 
-const TextArea = ({ name, id }) => {
+const TextArea = ({ name, id, value, onChange }) => {
   return (
     <>
-      <textarea name={name} id={id} className="px-2"></textarea>
+      <textarea
+        name={name}
+        id={id}
+        className="px-2"
+        onChange={onChange}
+        value={value}
+      ></textarea>
     </>
   );
 };
