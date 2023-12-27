@@ -8,7 +8,7 @@ const HeroSocials = () => {
       <motion.span className="flex w-full gap-5 justify-center">
         {socials.map((social, index) => (
           <motion.a
-            href="#"
+            href={social.link}
             key={index}
             className=" h-10 | sm:h-10 | md:h-10 | xl:h-10 "
           >

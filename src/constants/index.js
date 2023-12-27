@@ -15,15 +15,17 @@ export const socials = [
 
     image: Github,
     alt: "github icon",
-    link: 'https://github.com/pads-sama'
+    link: "https://github.com/pads-sama"
   },
   {
     image: Linkedin,
     alt: "linkedin icon",
+    link: "www.linkedin.com/in/jc-padillo"
   },
   {
     image: Instagram,
     alt: "instagram icon",
+    link: "https://www.instagram.com/p.a.d.s_"
   },
 ];
 
