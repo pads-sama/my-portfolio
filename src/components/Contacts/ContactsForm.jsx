@@ -6,6 +6,7 @@ import SubmitButton from "../Buttons/SubmitButton";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { motion } from "framer-motion";
 
 const toastConfig = {
   position: "top-right",
@@ -18,7 +19,7 @@ const toastConfig = {
   theme: "light",
 };
 
-const ContactsForm = () => {
+const ContactsForm = ({ style }) => {
   const form = useRef();
 
   //The initial form state and error messages
@@ -112,7 +113,7 @@ const ContactsForm = () => {
   };
   return (
     <>
-      <form ref={form} onSubmit={handleSubmit}>
+      <motion.form style={style} ref={form} onSubmit={handleSubmit}>
         <ToastContainer />
 
         <div className="w-96 flex flex-col mt-10 relative form_control">
@@ -160,7 +161,7 @@ const ContactsForm = () => {
           )}
         </div>
         <SubmitButton isLoading={isLoading} />
-      </form>
+      </motion.form>
     </>
   );
 };

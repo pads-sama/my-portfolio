@@ -1,29 +1,16 @@
-import React, { useRef } from "react";
+import React from "react";
 import { Artistic } from "../../assets";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 
-const appearAnimation = {
-  hidden: {
-    x: -500,
-    opacity: 0,
-  },
-  appear: {
-    x: 0,
-    opacity: 1,
-  },
-};
-
-const AboutInfo = () => {
-  const containerRef = useRef();
-  const inView = useInView(containerRef, { amount: 0.5, once: true });
+const AboutInfo = ({ inView, containerRef }) => {
   return (
-    <motion.div
-      ref={containerRef}
-      intial="hidden"
-      animate={inView ? "appear" : "hidden"}
-    >
+    <motion.div>
       <motion.div
-        variants={appearAnimation}
+        style={{
+          transform: inView ? "none" : "translateX(-200px)",
+          opacity: inView ? 1 : 0,
+          transition: "all .9s cubic-bezier(0.17, 0.55, 0.55, 1) .2s",
+        }}
         className="flex flex-col justify-center items-center transition gap-3"
       >
         <div className="w-[250px] h-[250px] bg-primary relative rounded-full overflow-hidden border-2 border-accent-clr">

@@ -1,35 +1,19 @@
 import React from "react";
 import { webAttributes } from "../../constants";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 
-const appearAnimation = {
-  hidden: {
-    opacity: 0,
-    scale: 0.5,
-  },
-  appear: {
-    opacity: 1,
-    scale: 1,
-  },
-};
-
-export const Attributes = () => {
-  const containerRef = useRef();
-  const inView = useInView(containerRef, { amount: 0.5, once: true });
-
+export const Attributes = ({ inView, containerRef }) => {
   return (
     <>
       {/* still 2x2 just scale down the items */}
-      <motion.div
-        ref={containerRef}
-        initial="hidden"
-        animate={inView ? "appear" : "hidden"}
-        className="grid grid-cols-2 transition gap-5 h-96 | sm:grid-cols-2  | md:grid-cols-4 | xl:grid-cols-4 xl:gap-7"
-      >
+      <motion.div className="grid grid-cols-2  transition gap-5 h-96 | sm:grid-cols-2  | md:grid-cols-4 | xl:grid-cols-4 xl:gap-7">
         {webAttributes.map((attribute, index) => (
           <motion.div
-            variants={appearAnimation}
+            style={{
+              opacity: inView ? 1 : 0,
+              scale: inView ? 1 : 0,
+              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0s",
+            }}
             className="flex flex-col items-center text-center gap-1  transition"
             key={index}
           >
