@@ -1,6 +1,6 @@
 import React from "react";
 
-const InputLable = ({ label, htmlFor }) => {
+const InputLabel = ({ label, htmlFor }) => {
   return (
     <label className="" htmlFor={htmlFor}>
       {label.split("").map((char, index) => (
@@ -12,4 +12,4 @@ const InputLable = ({ label, htmlFor }) => {
   );
 };
 
-export default InputLable;
+export default InputLabel;

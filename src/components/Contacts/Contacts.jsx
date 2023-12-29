@@ -1,9 +1,5 @@
 import React, { useRef } from "react";
-import InputLable from "../TextFields/InputLable";
 import "./Contacts.css";
-import TextArea from "../TextFields/TextArea";
-import TextInput from "../TextFields/textInput";
-import SubmitButton from "../Buttons/SubmitButton";
 import HeroTextName from "../Hero/HeroTextName";
 import { useScroll, useTransform } from "framer-motion";
 import HeroSocials from "../Hero/HeroSocials";

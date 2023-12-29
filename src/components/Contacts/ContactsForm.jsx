@@ -1,17 +1,11 @@
 import React, { useRef, useState } from "react";
 import TextInput from "../TextFields/textInput";
-import InputLable from "../TextFields/InputLable";
+import InputLabel from "../TextFields/InputLabel";
 import TextArea from "../TextFields/TextArea";
 import SubmitButton from "../Buttons/SubmitButton";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-const emailConfig = {
-  serviceID: "service_bqaeoxz",
-  templateID: "template_i84vt2f",
-  userID: "-J-InccJzAx8JtXnk",
-};
 
 const toastConfig = {
   position: "top-right",
@@ -27,8 +21,8 @@ const toastConfig = {
 const ContactsForm = () => {
   const form = useRef();
 
+  //The initial form state and error messages
   const initialFormState = {
-    //set the initial value of the input fields
     user_name: "",
     user_email: "",
     message: "",
@@ -43,28 +37,27 @@ const ContactsForm = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const [errorMessages, setErrorMessages] = useState(initialFormState);
+
   const validateForm = () => {
     let isValid = true;
     const errors = { ...initialFormState };
 
+    const { user_name, user_email, message } = formValues; //descruturing the input fields
+
     // Validate username
-    const usernameInput = form.current.user_name;
-    if (usernameInput.value.trim() === "") {
+    if (user_name.trim() === "") {
       isValid = false;
       errors.user_name = "Please enter your name";
     }
 
     // Validate useremail
-    const useremailInput = form.current.user_email;
-    if (!useremailInput.value.trim()) {
+    if (!user_email.trim()) {
       isValid = false;
       errors.user_email = "Please enter your email address";
     }
     // Validate message
-    const messageInput = form.current.message;
-    if (messageInput.value.trim() === "") {
+    if (message.trim() === "") {
       isValid = false;
-      // Display an error message or style the input to indicate the error
       errors.message = "Please enter your message";
     }
 
@@ -72,36 +65,54 @@ const ContactsForm = () => {
     return isValid;
   };
 
-  const sendEmail = (e) => {
+  //Handle form submission
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
+    //check if the form is valid
     if (!validateForm()) {
       return;
     }
+    //Submit the form
+
     setIsLoading(true);
 
-    emailjs
-      .sendForm(
-        emailConfig.serviceID,
-        emailConfig.templateID,
-        form.current,
-        emailConfig.userID
-      )
-      .then(
-        () => {
-          setIsLoading(false);
-          toast.success("Message was Sent!", toastConfig);
-          resetInputFields();
-        },
-        (error) => {
-          setIsLoading(false);
-          toast.error(error.text, toastConfig);
-        }
-      );
+    const timeout = setTimeout(async () => {
+      try {
+        const sendEmail = async (formData) => {
+          const emailConfig = {
+            serviceID: "service_bqaeoxz",
+            templateID: "template_i84vt2f",
+            userID: "-J-InccJzAx8JtXnk",
+          };
+
+          const response = await emailjs.sendForm(
+            emailConfig.serviceID,
+            emailConfig.templateID,
+            formData,
+            emailConfig.userID
+          );
+
+          return response;
+        };
+        const response = await sendEmail(form.current);
+        setIsLoading(false);
+        toast.success("Message was Sent!", toastConfig);
+        resetInputFields();
+      } catch (error) {
+        toast.error(error.text, toastConfig);
+        setIsLoading(false);
+      }
+    }, 1000);
+  };
+
+  const handleChange = (target) => {
+    const { name, value } = target; //destructure the name and value of the input field
+    setFormValues({ ...formValues, [name]: value }); //set the value of the input field to the updated value
   };
   return (
     <>
-      <form ref={form} onSubmit={sendEmail}>
+      <form ref={form} onSubmit={handleSubmit}>
         <ToastContainer />
 
         <div className="w-96 flex flex-col mt-10 relative form_control">
@@ -110,13 +121,11 @@ const ContactsForm = () => {
             id="name"
             name="user_name"
             value={formValues.user_name}
-            onChange={(e) =>
-              setFormValues({ ...formValues, user_name: e.target.value })
-            }
+            onChange={handleChange}
           />
-          <InputLable htmlFor="name" label="Name" />
+          <InputLabel htmlFor="name" label="Name" />
           {errorMessages.user_name && (
-            <span className="text-red-500 tracking-wider pt-1 text-xs">
+            <span className="text-red-500 font-bold tracking-wider pt-1 text-xs">
               {errorMessages.user_name}
             </span>
           )}
@@ -127,13 +136,11 @@ const ContactsForm = () => {
             id="email"
             name="user_email"
             value={formValues.user_email}
-            onChange={(e) =>
-              setFormValues({ ...formValues, user_email: e.target.value })
-            }
+            onChange={handleChange}
           />
-          <InputLable htmlFor="email" label="Email" />
+          <InputLabel htmlFor="email" label="Email" />
           {errorMessages.user_email && (
-            <span className="text-red-500 tracking-wider pt-1 text-xs">
+            <span className="text-red-500 font-bold tracking-wider pt-1 text-xs">
               {errorMessages.user_email}
             </span>
           )}
@@ -143,13 +150,11 @@ const ContactsForm = () => {
             id="message"
             name="message"
             value={formValues.message}
-            onChange={(e) =>
-              setFormValues({ ...formValues, message: e.target.value })
-            }
+            onChange={handleChange}
           />
-          <InputLable htmlFor="message" label="Message" />
+          <InputLabel htmlFor="message" label="Message" />
           {errorMessages.message && (
-            <span className="text-red-500 tracking-wider pt-1 text-xs">
+            <span className="text-red-500 font-bold tracking-wider pt-1 text-xs">
               {errorMessages.message}
             </span>
           )}
