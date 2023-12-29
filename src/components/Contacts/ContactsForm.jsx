@@ -106,7 +106,7 @@ const ContactsForm = () => {
     }, 1000);
   };
 
-  const handleChange = (target) => {
+  const handleChange = ({ target }) => {
     const { name, value } = target; //destructure the name and value of the input field
     setFormValues({ ...formValues, [name]: value }); //set the value of the input field to the updated value
   };

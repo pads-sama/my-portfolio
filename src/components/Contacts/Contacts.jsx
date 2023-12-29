@@ -28,8 +28,9 @@ const Contacts = () => {
         />
         <div className="backgroundOverlay  bg-gradient-to-l from-primary to-secondary opacity-[.2] z-8 "></div>
       </div>
-      <div className="w-full h-full grid place-content-center bg-primary |  xl:h-[100dvh]">
-        <div>
+      <div className="board-body w-full h-full relative grid place-content-center bg-primary |  xl:h-[100dvh]">
+        <div className="board"></div>
+        <div className="z-[1]">
           <ContactHeadings />
           <ContactsForm />
         </div>

@@ -1,3 +1,13 @@
+.board {
+    height: 100%;
+    width: 100%;
+    background-image: repeating-conic-gradient(from 45deg, #111134 0deg 90deg, var(--bg-clr) 90deg 180deg);
+    background-size: 4em 4em;
+    position: absolute;
+    inset: 0;
+    opacity: .4;
+}
+
 .contacts_image {
     background-image: url('../../assets/ai3.jpg');
     background-position: right 30% center;
