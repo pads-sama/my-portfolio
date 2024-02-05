@@ -1,21 +1,8 @@
-import Github from './github.png'
-import Instagram from './instagram.png'
-import Linkedin from './linkedin.png'
-import Responsive from './responsive.png'
-import SEO from './seo.png'
-import Lighting from './lighting.png'
-import Devops from './devops.png'
-import Artistic from './artistic.png'
+import Shape1 from "./hero/shape-1.svg"
+import Shape2 from "./hero/shape-2.svg"
 
 
-
-export{
-    Github,
-    Instagram,
-    Linkedin,
-    Responsive,
-    SEO,
-    Lighting,
-    Devops,
-    Artistic
+export {
+    Shape1,
+    Shape2
 }

@@ -1,15 +1,52 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- website description -->
+    <meta
+      name="description"
+      content="Frontend developer with a passion for creating visually stunning and user-friendly websites. Explore my diverse portfolio showcasing innovative projects and pixel-perfect designs. Let's elevate your digital experience together."
+    />
+    <!-- author -->
+    <meta name="author" content="Juan Carlos Padillo" />
+
+    <!-- for sharing to social media Open Graph -->
+    <meta
+      property="og:title"
+      content="Beyond the Lines | Juan Carlos Digital Space"
+    />
+    <meta
+      property="og:description"
+      content="Explore my portfolio and discover the web development projects I've worked on."
+    />
+    <meta property="og:image" content="URL to your image" />
+    <meta property="og:url" content="URL to your page" />
+
+    <!-- for sharing to twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Beyond the Lines | Juan Carlos Digital Space"
+    />
+    <meta
+      name="twitter:description"
+      content="Explore my portfolio and discover the web development projects I've worked on."
+    />
+    <meta name="twitter:image" content="URL to your image" />
+
+    <!-- ie compatibility -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- add favicon -->
+
     <link href="/dist/output.css" rel="stylesheet" />
     <link rel="stylesheet" href="./fonts/OnePiece-zAqL.ttf" />
+    <script src="./src/lib/toggleTheme.js" defer></script>
 
-    <title>My Portfolio</title>
+    <title>Beyond the Lines | Juan Carlos Digital Space</title>
   </head>
-  <body>
+  <body class="bg-bkg-1 text-text">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

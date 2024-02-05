@@ -5,74 +5,54 @@
 @tailwind utilities;
 
 
-@property --gradient-angle {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
-}
-
-:root {
-  --bg-clr: #0c0c1d;
-  --secondary: #00EEFF;
-  --acc-clr: #FF6F61;
-  --fm: 'Raleway', sans-serif;
-  --text: #f3f4f6;
-  --cubic-bezier: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-@property --gradient-angle {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
-}
-
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
   font-family: var(--fm);
 }
 
 html {
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
-
 }
 
 body {
-  background-color: var(--bg-clr);
-  color: var(--text);
+  background-color: var(--color-bkg1);
 }
 
-section {
-  height: 100%;
-  scroll-snap-align: center;
+@layer base {
+  :root {
+    --color-bkg1: 233deg 70% 12%;
+    --color-bkg2: 233deg, 65%, 15%;
+    --color-text: 269deg 100% 95%;
+    --accent: 271deg, 81%, 56%;
+  }
 }
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
 
 .transition {
-  transition: all 1s ease;
+  transition: all .3s ease-in-out;
 }
 
-h1,
-h2,
-h3,
-p {
-  -webkit-font-smoothing: antialiased;
+
+/* set the default theme to dark mode */
+/* @media (prefers-color-scheme: dark) { */
+/* :root { */
+/* Dark Mode */
+/* --color-bkg1: 233deg 70% 12%;
+    --color-bkg2: 233deg 65% 15%;
+    --color-text: 269deg 100% 95%;
+    --accent1: 271deg 81% 56%; */
+/* } */
+/* } */
+
+:root[data-theme="dark"] {
+  --color-bkg1: 233deg 70% 12%;
+  --color-bkg2: 233deg 65% 15%;
+  --color-text: 269deg 100% 95%;
+  --accent: 271deg 81% 56%;
 }
 
-p {
-  letter-spacing: 0.05em;
-}
-
-.backgroundOverlay {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  inset: 0;
+:root[data-theme="light"] {
+  --color-bkg1: 210deg 20% 98%;
+  --color-bkg2: 220deg 14% 96%;
+  --color-text: 224deg 71% 4%;
+  --accent: 271deg 81% 56%;
 }
